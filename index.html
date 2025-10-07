@@ -7,6 +7,46 @@
   <meta name="description" content="A minimal, responsive HTML starter site for testing and small projects." />
   <link rel="stylesheet" href="style.css">
 </head>
+  <!-- Floating Chatbot -->
+<div id="chatbot-container">
+  <div id="chatbot-header">Chat with us 💬</div>
+  <div id="chatbot-body">
+    <div id="chatbot-messages"></div>
+    <input id="chatbot-input" type="text" placeholder="Type a message..." />
+  </div>
+</div>
+
+<!-- Chatbot Toggle Button -->
+<button id="chatbot-toggle">💬</button>
+
+<script>
+  const toggleBtn = document.getElementById('chatbot-toggle');
+  const chatbot = document.getElementById('chatbot-container');
+  const input = document.getElementById('chatbot-input');
+  const messages = document.getElementById('chatbot-messages');
+
+  toggleBtn.addEventListener('click', () => {
+    chatbot.classList.toggle('open');
+  });
+
+  input.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter' && input.value.trim()) {
+      const msg = document.createElement('div');
+      msg.className = 'user-msg';
+      msg.textContent = input.value;
+      messages.appendChild(msg);
+
+      const reply = document.createElement('div');
+      reply.className = 'bot-msg';
+      reply.textContent = '🤖 Thanks for your message! (This is a demo bot.)';
+      messages.appendChild(reply);
+
+      input.value = '';
+      messages.scrollTop = messages.scrollHeight;
+    }
+  });
+</script>
+
 <body>
   <header>
     <div class="container" style="display:flex;align-items:center">
