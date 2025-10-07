@@ -1,12 +1,12 @@
 :root {
-  --accent: #9B009B;
+  --accent: #9B009B; /* Your purple */
   --bg: #ffffff;
   --border: #e5e7eb;
   --text: #111827;
   --muted: #6b7280;
 }
 
-/* Chatbot toggle button */
+/* Toggle button */
 #chatbot-toggle {
   position: fixed;
   bottom: 24px;
@@ -30,13 +30,13 @@
   box-shadow: 0 6px 14px rgba(0,0,0,0.2);
 }
 
-/* Custom icon image */
+/* Icon inside toggle */
 #chatbot-toggle img {
   width: 32px;
   height: 32px;
 }
 
-/* Chatbot window */
+/* Chatbot container */
 #chatbot-container {
   position: fixed;
   bottom: 100px;
@@ -62,24 +62,49 @@
 
 /* Header */
 #chatbot-header {
-  background: var(--accent);
+  background: linear-gradient(135deg, #9B009B, #7A007A);
   color: #fff;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px 14px;
   font-weight: 600;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
 }
 
+/* Brand */
+.chatbot-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.chatbot-brand img {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #fff;
+  padding: 3px;
+  box-shadow: 0 0 4px rgba(0,0,0,0.1);
+}
+
+/* Close button */
 #chatbot-header button {
   background: transparent;
   color: #fff;
   border: none;
   font-size: 20px;
   cursor: pointer;
+  line-height: 1;
+  transition: opacity 0.2s ease;
 }
 
-/* Messages and input */
+#chatbot-header button:hover {
+  opacity: 0.8;
+}
+
+/* Messages & input */
 #chatbot-messages {
   flex: 1;
   padding: 10px;
@@ -113,48 +138,3 @@
   color: var(--text);
   align-self: flex-start;
 }
-
-/* Chatbot header brand (icon + name) */
-.chatbot-brand {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.chatbot-brand img {
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  background: #fff;
-  padding: 3px;
-  box-shadow: 0 0 4px rgba(0,0,0,0.1);
-}
-
-/* Slight gradient for a modern header look */
-#chatbot-header {
-  background: linear-gradient(135deg, #2596be, #1c7ea1);
-  color: #fff;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 14px;
-  font-weight: 600;
-  border-top-left-radius: 12px;
-  border-top-right-radius: 12px;
-}
-
-/* Close button hover effect */
-#chatbot-header button {
-  background: transparent;
-  color: #fff;
-  border: none;
-  font-size: 20px;
-  cursor: pointer;
-  line-height: 1;
-  transition: opacity 0.2s ease;
-}
-
-#chatbot-header button:hover {
-  opacity: 0.8;
-}
-
