@@ -84,10 +84,11 @@
   width: 28px;
   height: 28px;
   border-radius: 50%;
-  background: #fff;
-  padding: 3px;
-  box-shadow: 0 0 4px rgba(0,0,0,0.1);
+  background: transparent; /* ✅ remove white background */
+  padding: 0; /* ✅ optional - remove white border padding */
+  box-shadow: none; /* ✅ optional - remove shadow around icon */
 }
+
 
 /* Close button */
 #chatbot-header button {
