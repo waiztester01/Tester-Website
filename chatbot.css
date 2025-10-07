@@ -62,7 +62,7 @@
 
 /* Header */
 #chatbot-header {
-  background: linear-gradient(135deg, #9B009B, #7A007A);
+  background: linear-gradient(135deg, #9B009B, #7A007A); /* 💜 purple gradient */
   color: #fff;
   display: flex;
   justify-content: space-between;
@@ -73,7 +73,7 @@
   border-top-right-radius: 12px;
 }
 
-/* Brand */
+/* Brand (icon + name) */
 .chatbot-brand {
   display: flex;
   align-items: center;
@@ -84,11 +84,10 @@
   width: 28px;
   height: 28px;
   border-radius: 50%;
-  background: transparent; /* ✅ remove white background */
-  padding: 0; /* ✅ optional - remove white border padding */
-  box-shadow: none; /* ✅ optional - remove shadow around icon */
+  background: rgba(255, 255, 255, 0.15); /* ✅ slight translucent halo for visibility */
+  padding: 3px; /* ✅ keeps round look */
+  box-shadow: none;
 }
-
 
 /* Close button */
 #chatbot-header button {
