@@ -69,20 +69,26 @@
     </div>
   </footer>
 
- <!-- Floating Chatbot -->
+<!-- Floating Chatbot -->
 <div id="chatbot-container" class="hidden">
   <div id="chatbot-header">
-    <span>💬 Chatbot Assistant</span>
-    <button id="chatbot-close">×</button>
+    <div class="chatbot-brand">
+      <img src="chatbot-icon.png" alt="Bot Icon">
+      <span>Assistant Bot</span>
+    </div>
+    <button id="chatbot-close" title="Close">×</button>
   </div>
   <div id="chatbot-messages"></div>
   <input id="chatbot-input" type="text" placeholder="Type a message..." />
 </div>
 
 <!-- Floating toggle button -->
-<button id="chatbot-toggle" title="Chat with us">💬</button>
+<button id="chatbot-toggle" title="Chat with us">
+  <img src="chatbot-icon.png" alt="Chat Icon">
+</button>
 
 <script src="chatbot.js"></script>
+
 
 </body>
 </html>
