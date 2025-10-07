@@ -4,15 +4,32 @@ const closeBtn = document.getElementById('chatbot-close');
 const input = document.getElementById('chatbot-input');
 const messages = document.getElementById('chatbot-messages');
 
-// Open/close chatbot when clicking the floating icon
+// Toggle chatbot visibility
 toggleBtn.addEventListener('click', () => {
-  const isHidden = chatbot.classList.toggle('hidden');
-  // Hide the toggle button when the chat is open
-  toggleBtn.style.display = isHidden ? 'flex' : 'none';
+  chatbot.classList.toggle('hidden');
+  toggleBtn.style.display = chatbot.classList.contains('hidden') ? 'flex' : 'none';
 });
 
-// Close chatbot when clicking the × button in the header
+// Close chatbot
 closeBtn.addEventListener('click', () => {
   chatbot.classList.add('hidden');
   toggleBtn.style.display = 'flex';
+});
+
+// Simple demo messages
+input.addEventListener('keypress', (e) => {
+  if (e.key === 'Enter' && input.value.trim()) {
+    const msg = document.createElement('div');
+    msg.className = 'user-msg';
+    msg.textContent = input.value;
+    messages.appendChild(msg);
+
+    const reply = document.createElement('div');
+    reply.className = 'bot-msg';
+    reply.textContent = '🤖 Thanks for your message! (Demo bot)';
+    messages.appendChild(reply);
+
+    input.value = '';
+    messages.scrollTop = messages.scrollHeight;
+  }
 });
