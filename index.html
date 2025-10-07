@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Simple General Website</title>
+  <meta name="description" content="A minimal, responsive HTML starter site for testing and small projects." />
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="container" style="display:flex;align-items:center">
+      <div class="brand">
+        <span class="logo" aria-hidden="true"></span>
+        <span>MySite</span>
+      </div>
+      <nav>
+        <div class="navlinks">
+          <a href="#features">Features</a>
+          <a href="#about">About</a>
+          <a href="#contact" class="btn">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div>
+        <h1>Simple, clean starter website</h1>
+        <p>This single-file HTML template is perfect for small demos, testing, or as a starting point for a project. It's responsive, accessible, and easy to customize.</p>
+
+        <div class="grid" id="features">
+          <div class="card">
+            <h3>Responsive layout</h3>
+            <p class="muted">Adapts to mobile and desktop.</p>
+          </div>
+          <div class="card">
+            <h3>Accessible markup</h3>
+            <p class="muted">Semantic HTML, readable structure.</p>
+          </div>
+          <div class="card">
+            <h3>Customizable</h3>
+            <p class="muted">Tweak colors, fonts, and sections easily.</p>
+          </div>
+        </div>
+      </div>
+
+      <aside class="card">
+        <h3>Quick start</h3>
+        <p style="margin:6px 0 12px;color:var(--muted)">Copy this file, rename it <code>index.html</code>, and open in your browser.</p>
+        <p style="margin:0"><a class="btn" href="#contact">Get in touch</a></p>
+      </aside>
+    </section>
+
+    <section id="about" style="margin-top:28px">
+      <div class="card">
+        <h2>About</h2>
+        <p style="color:var(--muted)">This template includes a header, hero, feature cards, an about section, and a contact form. It's intentionally minimal so you can adapt it quickly.</p>
+      </div>
+    </section>
+
+    <section id="contact" style="margin-top:18px">
+      <div class="card">
+        <h2>Contact</h2>
+        <form id="contactForm">
+          <label>
+            Name
+            <input type="text" name="name" placeholder="Your name" required />
+          </label>
+          <label>
+            Email
+            <input type="email" name="email" placeholder="you@example.com" required />
+          </label>
+          <label>
+            Message
+            <textarea name="message" placeholder="Your message"></textarea>
+          </label>
+          <div style="display:flex;gap:8px;align-items:center">
+            <button type="submit" class="btn">Send</button>
+            <button type="reset" style="padding:8px 12px;border-radius:8px;border:1px solid #e6edf3;background:#fff">Reset</button>
+          </div>
+          <p id="formNote" style="margin:8px 0 0;color:var(--muted);font-size:0.9rem">(This form is a demo — it won't send email.)</p>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container" style="display:flex;justify-content:space-between;align-items:center">
+      <div>© <span id="year"></span> MySite • Built with ❤️</div>
+      <div style="font-size:0.9rem;color:var(--muted)">Made for testing & demos</div>
+    </div>
+  </footer>
+
+  <script>
+    // small JS: handle contact form demo
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('contactForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      const name = this.name.value.trim() || 'Friend';
+      alert('Thanks, ' + name + '! This is a demo contact form.');
+      this.reset();
+    });
+  </script>
+</body>
+</html>
