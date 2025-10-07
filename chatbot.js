@@ -7,11 +7,14 @@ const messages = document.getElementById('chatbot-messages');
 // Toggle open/close when clicking the icon
 toggleBtn.addEventListener('click', () => {
   chatbot.classList.toggle('hidden');
+  // Change icon depending on state
+  toggleBtn.textContent = chatbot.classList.contains('hidden') ? '💬' : '❌';
 });
 
 // Close when clicking the × button
 closeBtn.addEventListener('click', () => {
   chatbot.classList.add('hidden');
+  toggleBtn.textContent = '💬';
 });
 
 // Demo message handling
