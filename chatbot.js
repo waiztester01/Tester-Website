@@ -4,14 +4,17 @@ const closeBtn = document.getElementById('chatbot-close');
 const input = document.getElementById('chatbot-input');
 const messages = document.getElementById('chatbot-messages');
 
+// Toggle open/close when clicking the icon
 toggleBtn.addEventListener('click', () => {
-  chatbot.classList.toggle('chatbot-closed');
+  chatbot.classList.toggle('hidden');
 });
 
+// Close when clicking the × button
 closeBtn.addEventListener('click', () => {
-  chatbot.classList.add('chatbot-closed');
+  chatbot.classList.add('hidden');
 });
 
+// Demo message handling
 input.addEventListener('keypress', (e) => {
   if (e.key === 'Enter' && input.value.trim()) {
     const msg = document.createElement('div');
