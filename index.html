@@ -19,7 +19,6 @@
         <div class="navlinks">
           <a href="#features">Features</a>
           <a href="#about">About</a>
-          <a href="#contact" class="btn">Contact</a>
         </div>
       </nav>
     </div>
@@ -61,30 +60,6 @@
       </div>
     </section>
 
-    <section id="contact" style="margin-top:18px">
-      <div class="card">
-        <h2>Contact</h2>
-        <form id="contactForm">
-          <label>
-            Name
-            <input type="text" name="name" placeholder="Your name" required />
-          </label>
-          <label>
-            Email
-            <input type="email" name="email" placeholder="you@example.com" required />
-          </label>
-          <label>
-            Message
-            <textarea name="message" placeholder="Your message"></textarea>
-          </label>
-          <div style="display:flex;gap:8px;align-items:center">
-            <button type="submit" class="btn">Send</button>
-            <button type="reset" style="padding:8px 12px;border-radius:8px;border:1px solid #e6edf3;background:#fff">Reset</button>
-          </div>
-          <p id="formNote" style="margin:8px 0 0;color:var(--muted);font-size:0.9rem">(This form is a demo — it won't send email.)</p>
-        </form>
-      </div>
-    </section>
   </main>
 
   <footer>
@@ -94,27 +69,18 @@
     </div>
   </footer>
 
-  <!-- Floating Chatbot -->
-  <div id="chatbot-container" class="chatbot-closed">
-    <div id="chatbot-header">
-      <span>💬 Chatbot Assistant</span>
-      <button id="chatbot-close">×</button>
-    </div>
-    <div id="chatbot-messages"></div>
-    <input id="chatbot-input" type="text" placeholder="Type a message..." />
+ <!-- Floating Chatbot -->
+<div id="chatbot-container" class="hidden">
+  <div id="chatbot-header">
+    <span>💬 Chatbot Assistant</span>
+    <button id="chatbot-close">×</button>
   </div>
+  <div id="chatbot-messages"></div>
+  <input id="chatbot-input" type="text" placeholder="Type a message..." />
+</div>
 
-  <button id="chatbot-toggle">💬</button>
+<!-- Floating toggle button -->
+<button id="chatbot-toggle" title="Chat with us">💬</button>
 
-  <script src="chatbot.js"></script>
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-    document.getElementById('contactForm').addEventListener('submit', function(e){
-      e.preventDefault();
-      const name = this.name.value.trim() || 'Friend';
-      alert('Thanks, ' + name + '! This is a demo contact form.');
-      this.reset();
-    });
-  </script>
 </body>
 </html>
